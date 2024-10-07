@@ -8,6 +8,20 @@ on java version.
 
 - Java: [ 8 | 11 | 17 | 21 ]
 
+## Branches
+
+- https://github.com/huntercodexs/quickjson/tree/quickjson-java21
+- https://github.com/huntercodexs/quickjson/tree/quickjson-java17
+- https://github.com/huntercodexs/quickjson/tree/quickjson-java11
+- https://github.com/huntercodexs/quickjson/tree/quickjson-java8
+
+## Releases
+
+- https://github.com/huntercodexs/quickjson/releases/tag/r.1.0.21
+- https://github.com/huntercodexs/quickjson/releases/tag/r.1.0.17
+- https://github.com/huntercodexs/quickjson/releases/tag/r.1.0.11
+- https://github.com/huntercodexs/quickjson/releases/tag/r.1.0.8
+
 ## How to use
 
 > NOTE: See the @Tests in the path src/test/java/com/huntercodexs/quickjson/QuickJsonTest.java
