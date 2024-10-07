@@ -1,5 +1,7 @@
 package com.huntercodexs.quickjson.core;
 
+import com.huntercodexs.quickjson.QuickJson;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;

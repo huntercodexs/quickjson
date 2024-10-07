@@ -1,6 +1,5 @@
 package com.huntercodexs.quickjson;
 
-import com.huntercodexs.quickjson.core.QuickJson;
 import com.huntercodexs.quickjson.core.QuickJsonBuilder;
 import com.huntercodexs.quickjson.core.QuickJsonExtractor;
 import com.huntercodexs.quickjson.dto.QuickJsonDto;

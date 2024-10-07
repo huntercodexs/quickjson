@@ -1,4 +1,6 @@
-package com.huntercodexs.quickjson.core;
+package com.huntercodexs.quickjson;
+
+import com.huntercodexs.quickjson.core.QuickJsonData;
 
 import java.util.ArrayList;
 import java.util.Collections;
