@@ -192,13 +192,14 @@ public class QuickJsonBuilder {
      * @see <a href="https://github.com/huntercodexs/quickjson">Quick JSON (GitHub)</a>
      * @author huntercodexs (powered by jereelton-devel)
      * */
+    @SuppressWarnings(value = {"unchecked"})
     public <T> T build(Object jsonData, Class<T> classT) {
 
         Field[] fields = classT.getDeclaredFields();
 
         try {
 
-            T instanceClass = ReflectionUtils.accessibleConstructor(classT).newInstance();
+            Object instanceClass = Class.forName(classT.getName()).getDeclaredConstructor().newInstance();
 
             for (Field field : fields) {
 
@@ -211,6 +212,8 @@ public class QuickJsonBuilder {
 
                 Field field1 = classT.getField(currentField);
                 String typeF = field1.getType().toString();
+
+                field1.setAccessible(true);
 
                 switch (typeF) {
                     case "class java.lang.Object":
@@ -257,16 +260,17 @@ public class QuickJsonBuilder {
             return (T) instanceClass;
 
         } catch (
-                NoSuchMethodException |
-                InvocationTargetException |
-                InstantiationException |
                 IllegalAccessException |
-                NoSuchFieldException e
+                NoSuchFieldException |
+                ClassNotFoundException |
+                InstantiationException |
+                InvocationTargetException |
+                NoSuchMethodException e
         ) {
             throw new RuntimeException(e);
         }
 
-    }
+	}
 
     /**
      * <h6 style="color: #FFFF00; font-size: 11px">build</h6>

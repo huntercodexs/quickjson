@@ -132,4 +132,20 @@ public class QuickJsonDto {
     public void setMap(HashMap<Object, Object> map) {
         this.map = map;
     }
+
+    public String toString() {
+        return "QuickJsonDto(" +
+                "type=" + type +
+                ", age=" + age +
+                ", name=" + name +
+                ", lastname=" + lastname +
+                ", fullname=" + fullname +
+                ", reference=" + reference +
+                ", address=" + address +
+                ", contacts=" + contacts +
+                ", numbers=" + numbers +
+                ", family=" + family +
+                ", map=" + map +
+                ')';
+    }
 }

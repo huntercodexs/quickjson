@@ -32,13 +32,13 @@ public class QuickJsonTest {
 		this.qjExtractor = new QuickJsonExtractor();
 	}
 
-	@org.junit.Test
+	@Test
 	public void addTest() {
 		qj.add("name", "John");
 		qj.print();
 	}
 
-	@org.junit.Test
+	@Test
 	public void addAllTest() {
 		qj.addAll("name", "John", "lastname", "Smith");
 		qj.print();
@@ -49,7 +49,7 @@ public class QuickJsonTest {
 		qj.print();
 	}
 
-	@org.junit.Test
+	@Test
 	public void removeTest() {
 		qj.add("name", "John");
 		qj.print();
@@ -58,7 +58,7 @@ public class QuickJsonTest {
 		qj.print();
 	}
 
-	@org.junit.Test
+	@Test
 	public void clearTest() {
 		qj.addAll("name", "John", "lastname", "Smith");
 		qj.print();
@@ -72,7 +72,7 @@ public class QuickJsonTest {
 		qj.print();
 	}
 
-	@org.junit.Test
+	@Test
 	public void updateTest() {
 		qj.add("name", "John");
 		qj.print();
@@ -83,7 +83,7 @@ public class QuickJsonTest {
 		qj.print();
 	}
 
-	@org.junit.Test
+	@Test
 	public void getTest() {
 		qj.add("name", "John");
 		qj.add("lastname", "Smith");
@@ -99,7 +99,7 @@ public class QuickJsonTest {
 		Assert.assertEquals(35, result);
 	}
 
-	@org.junit.Test
+	@Test
 	public void create_Sample1_Test() {
 		qj.add("name", "John");
 		qj.add("lastname", "Smith");
@@ -111,7 +111,7 @@ public class QuickJsonTest {
 		Assert.assertEquals("{\"name\":\"John\",\"age\":35,\"lastname\":\"Smith\"}", result);
 	}
 
-	@org.junit.Test
+	@Test
 	public void create_Sample2_Test() {
 		qj.add("name", "John");
 		qj.add("lastname", "Smith");
@@ -121,7 +121,7 @@ public class QuickJsonTest {
 		Assert.assertEquals("{\"name\":\"John\",\"age\":35,\"lastname\":\"Smith\"}", result);
 	}
 
-	@org.junit.Test
+	@Test
 	public void create_Sample3_Test() {
 		qj.add("name", "John");
 		qj.add("lastname", "Smith");
@@ -134,7 +134,7 @@ public class QuickJsonTest {
 		Assert.assertEquals("{\"reference\":{\"name\":\"Sarah Wiz\",\"parental\":\"friend\"},\"address\":[\"Street 1\", 200, \"New York City\"],\"name\":\"John\",\"age\":35,\"contacts\":[12345678, 98789789, 12424242],\"lastname\":\"Smith\"}", result);
 	}
 
-	@org.junit.Test
+	@Test
 	public void create_Sample4_Test() {
 		qj.add("name", "John");
 		qj.add("lastname", "Smith");
@@ -159,7 +159,7 @@ public class QuickJsonTest {
 		Assert.assertEquals("{\"reference\":{\"name\":\"Sarah Wiz\",\"parental\":\"friend\"},\"address\":[\"Street 1\", 200, \"New York City\"],\"name\":\"John\",\"family\":[\"mother\", \"July Smith\", \"father\", \"Luis Smith\", [\"brother\", \"Igor Smith\", \"age\", 24], [\"sister\", \"Elen Smith\", \"age\", 22]],\"age\":35,\"contacts\":[12345678, 98789789, 12424242],\"lastname\":\"Smith\"}", result);
 	}
 
-	@org.junit.Test
+	@Test
 	public void create_Sample5_Test() {
 
 		HashMap<String, Object> map = new HashMap<>();
@@ -191,7 +191,7 @@ public class QuickJsonTest {
 		Assert.assertEquals("{\"reference\":{\"name\":\"Sarah Wiz\",\"parental\":\"friend\"},\"address\":[\"Street 1\", 200, \"New York City\"],\"name\":\"John\",\"family\":[\"mother\", \"July Smith\", \"father\", \"Luis Smith\", [\"brother\", \"Igor Smith\", \"age\", 24], [\"sister\", \"Elen Smith\", \"age\", 22]],\"map\":{\"map3\":[\"Array 1\", \"Array 2\", 222, \"Array 3\"], \"map2\":345, \"map1\":\"Map 1 Value Test\"},\"age\":35,\"contacts\":[12345678, 98789789, 12424242],\"lastname\":\"Smith\"}", result);
 	}
 
-	@org.junit.Test
+	@Test
 	public void mergeTest() {
 		qj.add("name", "John");
 		qj.add("lastname", "Smith");
@@ -271,7 +271,7 @@ public class QuickJsonTest {
 
 	}
 
-	@org.junit.Test
+	@Test
 	public void prettifyTest() {
 
 		HashMap<String, Object> map = new HashMap<>();
@@ -354,7 +354,7 @@ public class QuickJsonTest {
 				"}", result);
 	}
 
-	@org.junit.Test
+	@Test
 	public void standardExtractorTest() {
 
 		HashMap<String, Object> map = new HashMap<>();
@@ -415,7 +415,7 @@ public class QuickJsonTest {
 
 	}
 
-	@org.junit.Test
+	@Test
 	public void smartExtractorTest() {
 
 		HashMap<String, Object> map = new HashMap<>();
@@ -486,7 +486,7 @@ public class QuickJsonTest {
 
 	}
 
-	@org.junit.Test
+	@Test
 	public void build_JsonToObject_Test() {
 
 		HashMap<String, Object> map = new HashMap<>();
