@@ -95,6 +95,8 @@ public class QuickJson {
                 json.append(val);
             } else if (val.toString().matches("^[a-zA-Z].*$")) {//String
                 json.append("\"").append(val).append("\"");
+            } else if (val.toString().matches("^(\\[]|\\{})$")) {//Array List Empty / Hash Map Empty
+                json.append(val);
             } else if (val.toString().matches("^\\[.*$")) {//Array List
                 json.append(arrayFixToJson(val));
             } else if (val.toString().matches("^\\{\".*$")) {//JSON Object
