@@ -99,6 +99,25 @@ public class QuickJsonTest {
 	}
 
 	@Test
+	public void getObjectTest() {
+		qj.add("name", "John");
+		qj.add("lastname", "Smith");
+		qj.add("age", 35);
+
+		String result = qj.json();
+
+		QuickJson qj2 = new QuickJson(result);
+		Object result1 = qj2.getObject("name");
+		Object result2 = qj2.getObject("lastname");
+		Object result3 = qj2.getObject("age");
+
+		Assert.assertEquals("John", result1);
+		Assert.assertEquals("Smith", result2);
+		Assert.assertEquals("35", result3);
+
+	}
+
+	@Test
 	public void create_Sample1_Test() {
 		qj.add("name", "John");
 		qj.add("lastname", "Smith");

@@ -1,6 +1,7 @@
 package com.huntercodexs.quickjson;
 
 import com.huntercodexs.quickjson.core.QuickJsonData;
+import com.huntercodexs.quickjson.core.QuickJsonExtractor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,10 +9,18 @@ import java.util.List;
 
 public class QuickJson {
 
+    private Object jsonObject;
+
     QuickJsonData qjData;
+    QuickJsonExtractor qjExtractor;
 
     public QuickJson() {
         this.qjData = new QuickJsonData();
+    }
+
+    public QuickJson(String jsonString) {
+        this.jsonObject = jsonString;
+        this.qjExtractor = new QuickJsonExtractor();
     }
 
     private static Object arrayFixToJson(Object array) {
@@ -271,6 +280,42 @@ public class QuickJson {
      * */
     public Object get(String field) {
         return this.qjData.get(field);
+    }
+
+    /**
+     * <h6 style="color: #FFFF00; font-size: 11px">getObject</h6>
+     *
+     * <p style="color: #CDCDCD">Retrieve one specific field value informing the field name</p>
+     *
+     * <p>Example</p>
+     *
+     * <blockquote><pre>
+     * public void test() {
+     *     QuickJson qj = new QuickJson();
+     *     qj.add("name", "John");
+     *     qj.add("lastname", "Smith");
+     *     qj.add("age", 35);
+     *
+     *     String result = qj.json();
+     *
+     *     QuickJson qj2 = new QuickJson(result);
+     *     Object result1 = qj2.getObject("name");
+     *     Object result2 = qj2.getObject("lastname");
+     *     Object result3 = qj2.getObject("age");
+     *
+     *     Assert.assertEquals("John", result1);
+     *     Assert.assertEquals("Smith", result2);
+     *     Assert.assertEquals("35", result3);
+     * }
+     * </pre></blockquote>
+     *
+     * @param field (String)
+     * @return Object (Value from field)
+     * @see <a href="https://github.com/huntercodexs/quickjson">Quick JSON (GitHub)</a>
+     * @author huntercodexs (powered by jereelton-devel)
+     * */
+    public Object getObject(String field) {
+        return this.qjExtractor.smartExtraction(this.jsonObject, field);
     }
 
     /**
