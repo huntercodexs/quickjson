@@ -8,23 +8,17 @@ on java version.
 
 - Java: [ 8 | 11 | 17 | 21 ]
 
-## Branches
+## Data Type Compatible
 
-- https://github.com/huntercodexs/quickjson/tree/quickjson-java21
-- https://github.com/huntercodexs/quickjson/tree/quickjson-java17
-- https://github.com/huntercodexs/quickjson/tree/quickjson-java11
-- https://github.com/huntercodexs/quickjson/tree/quickjson-java8
-
-## Releases
-
-- https://github.com/huntercodexs/quickjson/releases/tag/r.1.0.21
-- https://github.com/huntercodexs/quickjson/releases/tag/r.1.0.17
-- https://github.com/huntercodexs/quickjson/releases/tag/r.1.0.11
-- https://github.com/huntercodexs/quickjson/releases/tag/r.1.0.8
+- String
+- Integer
+- Object
+- List
+- HashMap
 
 ## How to use
 
-> NOTE: See the @Tests in the path src/test/java/com/huntercodexs/quickjson/QuickJsonTest.java
+> NOTE: See the @Tests in the path src/test/java/com/huntercodexs/quickjson/QuickJsonTest.java in each release
 
 - Instance the Objects
 
@@ -115,6 +109,23 @@ on java version.
 
 </code>
 
+- Read Object
+
+<code>
+
+    String result = "{\"name\":\"John\",\"age\":35,\"lastname\":\"Smith\"}"
+
+    QuickJson qj2 = new QuickJson(result);
+    Object result1 = qj2.getObject("name");
+    Object result2 = qj2.getObject("lastname");
+    Object result3 = qj2.getObject("age");
+
+    Assert.assertEquals("John", result1);
+    Assert.assertEquals("Smith", result2);
+    Assert.assertEquals("35", result3);
+
+</code>
+
 - Create one JSON (using create())
 
 <code>
@@ -195,4 +206,11 @@ on java version.
     Object jsonFinal = this.qjBuilder.build(quickJsonDto);
 
 </code>
+
+## Releases
+
+- https://github.com/huntercodexs/quickjson/releases/tag/r.1.21.0
+- https://github.com/huntercodexs/quickjson/releases/tag/r.1.17.0
+- https://github.com/huntercodexs/quickjson/releases/tag/r.1.11.0
+- https://github.com/huntercodexs/quickjson/releases/tag/r.1.8.0
 
