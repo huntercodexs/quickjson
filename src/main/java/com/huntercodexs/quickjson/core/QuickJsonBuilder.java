@@ -129,9 +129,9 @@ public class QuickJsonBuilder {
     }
 
     /**
-     * <h6 style="color: #FFFF00; font-size: 11px">build</h6>
+     * <p style="color: #FFFF00; font-size: 11px">build</p>
      *
-     * <p style="color: #CDCDCD">Convert data from any JSON String to Object</p>
+     * <p style="color: #CDCDCD">Data convert from any JSON String to Java Object &lt;T&gt;</p>
      *
      * <p>IMPORTANT: This support only five type of data:</p>
      * <ul>
@@ -149,7 +149,7 @@ public class QuickJsonBuilder {
      *     QuickJson qj = new QuickJson();
      *     QuickJsonBuilder qjBuilder = new QuickJsonBuilder();
      *
-     *     HashMap<String, Object> map = new HashMap<>();
+     *     HashMap&lt;String, Object&gt; map = new HashMap&lt;&gt;();
      *     map.put("map1", "Map 1 Value Test");
      *     map.put("map2", 345);
      *     map.put("map3", Arrays.asList("Array 1", "Array 2", 222, "Array 3"));
@@ -190,7 +190,8 @@ public class QuickJsonBuilder {
      *
      * @param jsonData (Object)
      * @param classT (Class&lt;T&gt;)
-     * @return Object (Object based on Class Type argument)
+     * @param <T> (Object)
+     * @return Object (Object based on Class Type argument: T)
      * @see <a href="https://github.com/huntercodexs/quickjson">Quick JSON (GitHub)</a>
      * @author huntercodexs (powered by jereelton-devel)
      * */
@@ -275,7 +276,7 @@ public class QuickJsonBuilder {
 	}
 
     /**
-     * <h6 style="color: #FFFF00; font-size: 11px">build</h6>
+     * <p style="color: #FFFF00; font-size: 11px">build</p>
      *
      * <p style="color: #CDCDCD">Convert data from any Object to JSON String</p>
      *
@@ -295,7 +296,7 @@ public class QuickJsonBuilder {
      *     QuickJson qj = new QuickJson();
      *     QuickJsonBuilder qjBuilder = new QuickJsonBuilder();
      *
-     *     HashMap<String, Object> map = new HashMap<>();
+     *     HashMap&lt;String, Object&gt; map = new HashMap&lt;&gt;();
      *     map.put("map1", "Map 1 Value Test");
      *     map.put("map2", 345);
      *     map.put("map3", Arrays.asList("Array 1", "Array 2", 222, "Array 3"));
