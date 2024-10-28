@@ -6,7 +6,7 @@ on java version.
 
 ## Pre Requisites
 
-- Java: [ 8 | 11 | 17 | 21 ]
+- Java 8
 
 ## How to use
 

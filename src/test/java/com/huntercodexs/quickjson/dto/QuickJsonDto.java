@@ -146,6 +146,6 @@ public class QuickJsonDto {
                 ", numbers=" + numbers +
                 ", family=" + family +
                 ", map=" + map +
-                ')';
+                ")";
     }
 }
