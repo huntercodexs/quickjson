@@ -20,8 +20,10 @@
     <!--Deploy: License Information-->
     <licenses>
         <license>
-            <name>MIT License</name>
-            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <name>GNU General Public License (GPL), Version 3.0</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+            <distribution>repo</distribution>
+            <comments>See "http://en.wikipedia.org/wiki/Multi-licensing"</comments>
         </license>
     </licenses>
 
@@ -56,6 +58,7 @@
 
     <build>
         <plugins>
+
             <!--Build: Generate Final Jar with all dependency-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -73,6 +76,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 
