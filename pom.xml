@@ -2,16 +2,56 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--Deploy: Spring Information-->
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.huntercodexs.quickjson</groupId>
+    <!--Deploy: Coordinates-->
+    <packaging>jar</packaging>
+    <groupId>com.huntercodexs</groupId>
     <artifactId>quickjson</artifactId>
     <version>1.8.0-SNAPSHOT</version>
 
+    <!--Deploy: ProjectName, Description and URL-->
+    <name>quickjson</name>
+    <description>quickjson</description>
+    <url>https://github.com/huntercodexs/quickjson</url>
+
+    <!--Deploy: License Information-->
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <!--Deploy: Developer Information-->
+    <developers>
+        <developer>
+            <name>Huntercodexs</name>
+            <email>huntercodexs@gmail.com</email>
+            <organization>Huntercodexs</organization>
+            <organizationUrl>http://www.huntercodexs.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <!--Deploy: SCM Information-->
+    <scm>
+        <connection>scm:git:git://github.com/huntercodexs/quickjson</connection>
+        <developerConnection>scm:git:ssh://github.com:huntercodexs/quickjson</developerConnection>
+        <url>http://github.com/huntercodexs/quickjson/tree/release-1.8.0</url>
+    </scm>
+
     <properties>
+
+        <!--Java Version-->
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+
+        <!--Charset Encoding - Optional-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
     </properties>
 
     <dependencies>
@@ -63,5 +103,13 @@
             </plugin>
         </plugins>
     </build>
+
+    <!--Deploy: Distribution on GitHub Packages-->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/huntercodexs/quickjson</url>
+        </repository>
+    </distributionManagement>
 
 </project>
