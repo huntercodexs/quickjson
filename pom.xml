@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <!--Deploy: Spring Information-->
     <modelVersion>4.0.0</modelVersion>
@@ -9,7 +10,7 @@
     <packaging>jar</packaging>
     <groupId>com.huntercodexs</groupId>
     <artifactId>quickjson</artifactId>
-    <version>1.21.0</version>
+    <version>1.21.0-SNAPSHOT</version>
 
     <!--Deploy: ProjectName, Description and URL-->
     <name>quickjson</name>
@@ -19,10 +20,8 @@
     <!--Deploy: License Information-->
     <licenses>
         <license>
-            <name>GNU General Public License (GPL), Version 3.0</name>
-            <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
-            <distribution>repo</distribution>
-            <comments>See "http://en.wikipedia.org/wiki/Multi-licensing"</comments>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
         </license>
     </licenses>
 
@@ -43,7 +42,6 @@
         <url>http://github.com/huntercodexs/quickjson/tree/release-1.21.0</url>
     </scm>
 
-    <!--Deploy: Project Properties-->
     <properties>
 
         <!--Java Version-->
@@ -58,7 +56,6 @@
 
     <build>
         <plugins>
-
             <!--Build: Generate Final Jar with all dependency-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -76,92 +73,14 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <!--Deploy: Maven Sources-->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!--Deploy: Maven JavaDoc-->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.3.2</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <!--To prevent the warning: "javadoc: warning - The code being documented uses modules but the packages..."-->
-                <configuration>
-                    <source>8</source>
-                </configuration>
-            </plugin>
-
-            <!--Deploy: GPG Assign-->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                        <!--To specify the GPG Key-->
-                        <configuration>
-                            <keyname>D89E6177</keyname>
-                            <!--To avoid gpg error: signing failed: No such file or directory-->
-                            <gpgArguments>
-                                <arg>--pinentry-mode</arg>
-                                <arg>loopback</arg>
-                            </gpgArguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!--Deploy: Maven Publishing Central-->
-            <plugin>
-                <groupId>org.sonatype.central</groupId>
-                <artifactId>central-publishing-maven-plugin</artifactId>
-                <version>0.6.0</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <skipPublishing>true</skipPublishing>
-                    <publishingServerId>central</publishingServerId>
-                    <deploymentName>QuickJson-${project.version}</deploymentName>
-                    <outputFilename>quickjson-${project.version}</outputFilename>
-                    <ignorePublishedComponents>false</ignorePublishedComponents>
-                </configuration>
-            </plugin>
-
         </plugins>
     </build>
 
+    <!--Deploy: Distribution on GitHub Packages-->
     <distributionManagement>
-        <!--Deploy: Distribution on Maven Central-->
         <repository>
-            <id>central</id>
-            <layout>default</layout>
-            <name>Maven Central</name>
-            <uniqueVersion>false</uniqueVersion>
-            <url>https://central.sonatype.com/api/v1/publisher/upload</url>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/huntercodexs/quickjson</url>
         </repository>
     </distributionManagement>
 
