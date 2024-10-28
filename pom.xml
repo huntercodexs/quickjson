@@ -143,7 +143,7 @@
                 <version>0.6.0</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <skipPublishing>true</skipPublishing>
+                    <skipPublishing>false</skipPublishing>
                     <publishingServerId>central</publishingServerId>
                     <deploymentName>QuickJson-${project.version}</deploymentName>
                     <outputFilename>quickjson-${project.version}</outputFilename>
